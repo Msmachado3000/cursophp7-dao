@@ -26,10 +26,13 @@ require_once("config.php");
 //$usuario -> login("msmachado3000", "12345");
 //echo $usuario;
 
-$aluno = new Usuario("aluno2", "lkjhk&");
+//Criando um novo usuario
+//$aluno = new Usuario("aluno2", "lkjhk&");
+//$aluno->insert();
+//echo $aluno;
 
-$aluno->insert();
-
-echo $aluno;
-
+$usuario = new Usuario();
+$usuario->loadById(8);
+$usuario->update("professor", "987987");
+echo $usuario;
  ?>
