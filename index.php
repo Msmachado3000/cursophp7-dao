@@ -8,10 +8,24 @@ require_once("config.php");
 
 //echo json_encode($usuarios);
 
-$root = new Usuario();
+// Carrega Um Usuario
+//$root = new Usuario();
+//$root->loadById(3);
+//echo $root;
 
-$root->loadById(3);
+//Carrega uma lista de todos os usuarios
+//$lista = Usuario::getList(); // Isso pode ser assim porque é static a funcção getList
+//echo json_encode($lista); 
 
-echo $root;
+//Carrega uma lista de usuario buscando pelo login
+//$search = Usuario::search("jo");
+//echo json_encode($search);
+
+//Carrega um usuario pelo login e senha
+$usuario = new Usuario();
+$usuario -> login("msmachado3000", "123k45");
+echo $usuario;
+
+
 
  ?>
