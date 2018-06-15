@@ -29,10 +29,10 @@ class Usuario {
 		$this->dtcadastro = $value;
 	}
 	
-	public function loadById($id){
+	public function loadById($idd){
 		$sql = new Sql();
 		$results = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario = :ID", array(
-			":ID"=>$id
+			":ID"=>$idd
 		));
 		if (count($results) > 0) {
 			$row = $results[0];
@@ -47,7 +47,7 @@ class Usuario {
 			"idusuario"=>$this->getIdusuario(),
 			"deslogin"=>$this->getDeslogin(),
 			"dessenha"=>$this->getDessenha(),
-			"dtcadastro"=>$this->getDtcadastro()//->format("d/m/Y H:i:s")
+			"dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s")
 		));
 	}
 } 	
